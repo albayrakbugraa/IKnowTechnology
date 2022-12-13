@@ -1,0 +1,15 @@
+C:\Users\BUGRA\source\repos\IKnowTechnology\IKnowTechnology.CORE\bin\Debug\net5.0\IKnowTechnology.CORE.deps.json
+C:\Users\BUGRA\source\repos\IKnowTechnology\IKnowTechnology.CORE\bin\Debug\net5.0\IKnowTechnology.CORE.runtimeconfig.json
+C:\Users\BUGRA\source\repos\IKnowTechnology\IKnowTechnology.CORE\bin\Debug\net5.0\IKnowTechnology.CORE.runtimeconfig.dev.json
+C:\Users\BUGRA\source\repos\IKnowTechnology\IKnowTechnology.CORE\bin\Debug\net5.0\IKnowTechnology.CORE.dll
+C:\Users\BUGRA\source\repos\IKnowTechnology\IKnowTechnology.CORE\bin\Debug\net5.0\IKnowTechnology.CORE.pdb
+C:\Users\BUGRA\source\repos\IKnowTechnology\IKnowTechnology.CORE\obj\Debug\net5.0\IKnowTechnology.CORE.csproj.AssemblyReference.cache
+C:\Users\BUGRA\source\repos\IKnowTechnology\IKnowTechnology.CORE\obj\Debug\net5.0\IKnowTechnology.CORE.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\BUGRA\source\repos\IKnowTechnology\IKnowTechnology.CORE\obj\Debug\net5.0\IKnowTechnology.CORE.AssemblyInfoInputs.cache
+C:\Users\BUGRA\source\repos\IKnowTechnology\IKnowTechnology.CORE\obj\Debug\net5.0\IKnowTechnology.CORE.AssemblyInfo.cs
+C:\Users\BUGRA\source\repos\IKnowTechnology\IKnowTechnology.CORE\obj\Debug\net5.0\IKnowTechnology.CORE.csproj.CoreCompileInputs.cache
+C:\Users\BUGRA\source\repos\IKnowTechnology\IKnowTechnology.CORE\obj\Debug\net5.0\IKnowTechnology.CORE.dll
+C:\Users\BUGRA\source\repos\IKnowTechnology\IKnowTechnology.CORE\obj\Debug\net5.0\refint\IKnowTechnology.CORE.dll
+C:\Users\BUGRA\source\repos\IKnowTechnology\IKnowTechnology.CORE\obj\Debug\net5.0\IKnowTechnology.CORE.pdb
+C:\Users\BUGRA\source\repos\IKnowTechnology\IKnowTechnology.CORE\obj\Debug\net5.0\IKnowTechnology.CORE.genruntimeconfig.cache
+C:\Users\BUGRA\source\repos\IKnowTechnology\IKnowTechnology.CORE\obj\Debug\net5.0\ref\IKnowTechnology.CORE.dll

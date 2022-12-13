@@ -1,0 +1,139 @@
+﻿
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <title>@ViewData["Title"]</title>
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="~/assets/images/favicon.ico">
+
+    <!-- App css -->
+    <link href="~/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/css/jquery-ui.min.css" rel="stylesheet">
+    <link href="~/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/css/metisMenu.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- ToastR Alerts-->
+    <link type="text/css" href="~/assets/vendor/toastr.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="~/css/site.css" />
+    @await RenderSectionAsync("Styles", required: false)
+
+</head>
+<body class="dark-sidenav">
+    <!-- Left Sidenav -->
+    <div class="left-sidenav">
+        <!-- LOGO -->
+        <div class="brand">
+            <a href="#" class="logo">
+                <span>
+                    <img src="~/logo.svg" alt="logo-small" class="logo-sm">
+                </span>
+            </a>
+        </div>
+        <!--end logo-->
+        <div class="menu-content h-100" data-simplebar>
+            <ul class="metismenu left-sidenav-menu">
+                <li class="menu-label mt-0"></li>
+                <li>
+                    <a asp-controller="User" asp-action="Index"> <i data-feather="home" class="align-self-center menu-icon"></i><span>Anasayfa</span></a>
+                </li>
+
+                <li>
+                    <a href="javascript: void(0);"><i data-feather="grid" class="align-self-center menu-icon"></i><span>Not Al</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <ul class="nav-second-level" aria-expanded="false">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Task" asp-action="CreateTask"><i class="ti-control-record"></i>Günlük Görev</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="javascript: void(0);"><i data-feather="crosshair" class="align-self-center menu-icon"></i><span>Notlar</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                    <ul class="nav-second-level" aria-expanded="false">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Task" asp-action="GetTaskList"><i class="ti-control-record"></i>Görevler</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- end left-sidenav-->
+
+    <div class="page-wrapper">
+        <!-- Top Bar Start -->
+        <div class="topbar">
+            <!-- Navbar -->
+            <nav class="navbar-custom">
+                <ul class="list-unstyled topbar-nav float-right mb-0">                  
+
+                    <li class="dropdown">
+                        <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button"
+                           aria-haspopup="false" aria-expanded="false">
+                            <span class="ml-1 nav-user-name hidden-sm">@User.Claims.First(z => z.Type == "firstName").Value</span>
+                            <img src="@User.Claims.First(z => z.Type == "photoPath").Value" alt="profile-user" class="rounded-circle" />
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" asp-controller="User" asp-action="Index"><i data-feather="user" class="align-self-center icon-xs icon-dual mr-1"></i> Hesabım</a>
+                            <a class="dropdown-item" href="#"><i data-feather="settings" class="align-self-center icon-xs icon-dual mr-1"></i> Ayarlar</a>
+                            <div class="dropdown-divider mb-0"></div>
+                            <a class="dropdown-item" asp-controller="Account" asp-action="LogOut"><i data-feather="power" class="align-self-center icon-xs icon-dual mr-1"></i> Çıkış</a>
+                        </div>
+                    </li>
+                </ul><!--end topbar-nav-->
+
+                <ul class="list-unstyled topbar-nav mb-0">
+                    <li>
+                        <button class="nav-link button-menu-mobile">
+                            <i data-feather="menu" class="align-self-center topbar-icon"></i>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+            <!-- end navbar-->
+        </div> <!-- Top Bar End -->
+        <!-- Page Content-->
+        <div class="page-content">
+
+            <!-- Main Container -->
+            <div class="container-fluid">
+                @RenderBody()
+            </div> <!-- Main Container END -->
+
+            <footer class="footer text-center text-sm-left">
+                &copy; 2020 Dastyle <span class="d-none d-sm-inline-block float-right">Crafted with <i class="mdi mdi-heart text-danger"></i> by Mannatthemes</span>
+            </footer><!--end footer-->
+        </div>
+        <!-- end page content -->
+    </div>
+    <!-- end page-wrapper -->
+    <!-- jQuery  -->
+    <script src="~/assets/js/jquery.min.js"></script>
+    <script src="~/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="~/assets/js/metismenu.min.js"></script>
+    <script src="~/assets/js/waves.js"></script>
+    <script src="~/assets/js/feather.min.js"></script>
+    <script src="~/assets/js/simplebar.min.js"></script>
+    <script src="~/assets/js/jquery-ui.min.js"></script>
+    <script src="~/assets/js/moment.js"></script>
+
+
+    <!-- App js -->
+    <script src="~/assets/js/app.js"></script>
+
+
+    <!-- Toastr -->
+    <script src="~/assets/vendor/toastr.min.js"></script>
+    <script src="~/assets/js/toastr.js"></script>
+
+    @* <script src="~/lib/jquery/dist/jquery.min.js"></script>*@
+    @*<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>*@
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>

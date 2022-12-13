@@ -1,0 +1,83 @@
+﻿@using IKnowTechnology.CORE.Enums;
+
+@model List<TaskVM>
+
+<!-- Page-Title -->
+<div class="row">
+    <div class="col-sm-12">
+        <div class="page-title-box">
+            <div class="row">
+                <div class="col">
+                    <h4 class="page-title">Notlar</h4>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a asp-action="Index" asp-controller="User">Anasayfa</a></li>
+                        <li class="breadcrumb-item active">Görevler</li>
+                    </ol>
+                </div><!--end col-->
+            </div><!--end row-->
+        </div><!--end page-title-box-->
+    </div><!--end col-->
+</div><!--end row-->
+<!-- end page title end breadcrumb -->
+
+<div class="row">
+    <div class="col">
+        <div class="card">
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered mb-0 table-centered">
+                        <thead>
+                            <tr>
+                                <th class="text-center">Başlık</th>
+                                <th class="text-center">Açıklama</th>
+                                <th class="text-center">Yapılacak Tarih</th>
+                                <th class="text-center">Oluşturulma Tarihi</th>
+                                <th class="text-center">Güncelleme Tarihi</th>
+                                <th class="text-center">Durum</th>
+                                <th class="text-center">İşlemler</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td class="text-center">@item.Title</td>
+                                    <td class="text-center">@item.Description</td>
+                                    <td class="text-center">@item.WorkTime.ToString("dd-MM-yyyy")</td>
+                                    <td class="text-center">@item.CreationDate.ToString("dd-MM-yyyy")</td>
+                                    <td class="text-center">@(item.UpdateDate == null ? "--" : ((DateTime)item.UpdateDate).ToString("dd-MM-yyyy"))</td>
+                                    @switch (item.Status)
+                                    {
+                                        case Status.Bekliyor:
+                                            <td class="text-center"><span class="badge badge-warning">Bekliyor</span></td>
+                                            break;
+                                        case Status.Yapıldı:
+                                            <td class="text-center"><span class="badge badge-success">Yapıldı</span></td>
+                                            break;
+                                        default:
+                                            break;
+                                    }
+
+                                    <td class="text-center">
+                                        <a class="mr-2" asp-controller="Task" asp-action="SuccessTask" asp-route-taskId="@item.Id"><i class="mdi mdi-check-box-outline text-success font-18"></i></a>
+                                        <a class="mr-2" asp-controller="Task" asp-action="UpdateTask" asp-route-taskId="@item.Id"><i class="las la-pen text-warning font-18"></i></a>
+                                        <a class="mr-2" asp-controller="Task" asp-action="DeleteTask" asp-route-taskId="@item.Id"><i class="las la-trash-alt text-danger font-18"></i></a>
+                                    </td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table><!--end /table-->
+                </div><!--end /tableresponsive-->
+            </div><!--end card-body-->
+        </div><!--end card-->
+    </div>
+</div>
+
+
+
+@section Scripts{
+
+    <script src="~/assets/vendor/daterangepicker/daterangepicker.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+}
